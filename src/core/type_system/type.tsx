@@ -39,13 +39,13 @@ class EnumType extends Type {
 
 class Module {
     name: string;
-    functions: FunctionType[];
     types: Type[];
-    traitImplementations: TraitImplementation;
+    subModules: Module[];
+    traitImplementations: TraitImplementation[];
 
-    constructor(name: string, functions: FunctionType[], types: Type[], traitImplementations: TraitImplementation) {
+    constructor(name: string, subModules: Module[], types: Type[], traitImplementations: TraitImplementation[]) {
         this.name = name;
-        this.functions = functions;
+        this.subModules = subModules;
         this.types = types;
         this.traitImplementations = traitImplementations;
     }
@@ -73,4 +73,5 @@ interface TypeMember {
 export {
     Type,
     PrimitiveType,
+    Module,
 };

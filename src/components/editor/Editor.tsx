@@ -34,8 +34,6 @@ export const Editor = (props: EditorProps) => {
             Math.max(...inputSizes.map(sz => sz.width)) + conSize +
             Math.max(...outputSizes.map(sz => sz.width)) + conSize,
         );
-
-        const height = headerSize.
     };
 
     React.useEffect(() => {

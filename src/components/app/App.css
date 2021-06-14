@@ -1,4 +1,8 @@
-.App {
+.hierarchy-wrapper {
+    width: 200px;
+    height: 400px;
+    border: 1px;
+    background-color: lightgray;
 }
 
 .App-logo {

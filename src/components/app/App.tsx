@@ -14,7 +14,9 @@ function App() {
 
   return (
     <div className="App">
-      <Hierarchy rootModule={module1} />
+      <div className='hierarchy-wrapper'>
+        <Hierarchy rootModule={module1} />
+      </div>
     </div>
   );
 }

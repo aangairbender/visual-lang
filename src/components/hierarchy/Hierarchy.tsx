@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 
 import { Module } from '../../core/type_system/type'
+import './Hierarchy.scss'
 
 interface HierarchyProps {
     rootModule: Module,
 }
 
 export const Hierarchy = (props: HierarchyProps) => (
-    <div style={{backgroundColor: 'lightgray', display: 'inline-block', padding: '10px'}}>
+    <div className='hierarchy'>
         <HierarchyNode
             module={props.rootModule}
             depth={0}
@@ -28,14 +29,15 @@ const HierarchyNode = (props: HierarchyNodeProps) => {
 
     const toggle = () => setCollapsedState(!isCollapsed);
 
-    const offset = props.depth * 20; // px
-
     const collapseIcon = isCollapsed ? '➕' : '➖';
 
     return (
         <React.Fragment>
             {props.visible && (
-                <div style={{marginLeft: `${offset}px`}} onClick={toggle}>
+                <div
+                    className={`hierarchy-node depth-${props.depth}`}
+                    onClick={toggle}
+                >
                     {`${collapseIcon} ${props.module.name}`}
                 </div>
             )}

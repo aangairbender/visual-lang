@@ -4,6 +4,10 @@
     height: 100%;
 
     .hierarchy-node {
+        border: 1px solid black;
+        border-radius: 5px;
+        margin: 5px 0;
+
         @for $depth from 0 to 20 {
             &.depth-#{$depth} {
                 margin-left: #{$depth * 20}px;
